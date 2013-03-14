@@ -1,0 +1,9 @@
+Create a new Review of
+
+<%= form_for @review, :url => restaurant_reviews_path(@restaurant) do |f| %>
+  <%= f.label :text %>:
+  <%= f.text_field :text %><br />
+
+
+  <%= f.submit %>
+<% end %>
