@@ -5,7 +5,7 @@
 <h2><%= cuisine.name %></h2>
 <%end%>
 
-
+<div>
 <table style='border: 2px solid #999'>
   <thead>
     <th> Restaurant Reviews </th>
@@ -19,14 +19,13 @@
     <%end%>
   </tbody>
 </table>
+</div>
 
-<h3><%= @restaurant.reviews.empty? ? "You need to create a review" : "Look at all those lovely reviews!!" %></h3>
+<h5><%= @restaurant.reviews.empty? ? "You need to create a review" : "Look at all those lovely reviews!!" %></h5>
 
-<p><%= link_to "Edit Name", edit_restaurant_path(@restaurant) %></p>
 
-<p><%= link_to "Delete Restaurant", restaurant_path(@restaurant), :confirm => 'Are you sure?', method: :delete %></p>
 
-<p> Create your own review:
+<p> <h2>Create your own review:</h2>
 
   <%= form_for @review, :url => restaurant_reviews_path(@restaurant) do |f| %>
   <%= f.label "Go for it" %>:
@@ -37,5 +36,9 @@
 <% end %>
 
 </p>
+
+<p><%= link_to "Edit Restaurant Name", edit_restaurant_path(@restaurant) %></p>
+
+<p><%= link_to "Delete Restaurant", restaurant_path(@restaurant), :confirm => 'Are you sure?', method: :delete %></p>
 
 <p> <%= link_to "Home", root_path %> </p>

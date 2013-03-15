@@ -11,7 +11,6 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(params[:restaurant])
-    debugger
     @restaurant.save
     redirect_to :action => 'index'
   end
