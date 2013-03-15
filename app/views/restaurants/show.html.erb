@@ -1,7 +1,9 @@
 <h1> Welcome to <%= @restaurant.name %>'s Reviews</h1>
 
-
-
+<h2> Cuisine Style(s)</h2>
+<% @restaurant.cuisines.each do |cuisine| %>
+<h2><%= cuisine.name %></h2>
+<%end%>
 
 
 <table style='border: 2px solid #999'>
@@ -22,7 +24,7 @@
 
 <p><%= link_to "Edit Name", edit_restaurant_path(@restaurant) %></p>
 
-<p><%= link_to "Delete Restaurant", restaurant_path(@restaurant), :confirm => 'Are you sure?', :method => :delete %></p>
+<p><%= link_to "Delete Restaurant", restaurant_path(@restaurant), :confirm => 'Are you sure?', method: :delete %></p>
 
 <p> Create your own review:
 

@@ -7,6 +7,8 @@ RestaurantReviewSite::Application.routes.draw do
     resources :reviews
   end
 
+  resources :cuisines
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

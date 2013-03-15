@@ -1,0 +1,22 @@
+
+<h1> Welcome to the Restaurant Review Site </h1>
+
+<p><h2> Current Cuisines</h2></p>
+
+
+<table style='border: 2px solid #999' class="table table-striped">
+  <thead>
+    <th> Cuisines </th>
+  </thead>
+  <tbody>
+    <% @cuisines.each do |c| %>
+    <tr>
+      <td> <%= c.name %>
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<p> <%= link_to "Home", root_path %> </p>
+

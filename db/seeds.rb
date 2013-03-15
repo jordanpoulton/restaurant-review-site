@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+@british_cuisine = Cuisine.new
+@british_cuisine.name="British"
+@british_cuisine.save
+
+@foreign_cuisine = Cuisine.new
+@foreign_cuisine.name="Foreign"
+@foreign_cuisine.save

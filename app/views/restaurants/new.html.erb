@@ -1,9 +1,17 @@
-Create a new restaurant
+<h1>Create a new restaurant and Select Cuisine(s)</h1>
 
+<div>
 <%= form_for @restaurant do |f| %>
   <%= f.label :name %>:
-  <%= f.text_field :name %><br />
+  <%= f.text_field :name %>
+  <% Cuisine.all.each do |cuisine| %>
+  <p>
+    <%= check_box_tag "restaurant[cuisine_ids][]", cuisine.id, @restaurant.cuisines.include?(cuisine) %>
+  <%= cuisine.name %></p>
+  <%end%>
 
 
   <%= f.submit %>
 <% end %>
+
+</div>
