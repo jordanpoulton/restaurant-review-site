@@ -1,8 +1,6 @@
-<h1> Welcome to <%= @restaurant.name %></h1>
+<h1> Welcome to <%= @restaurant.name %>'s Reviews</h1>
 
-<p><%= link_to "Edit Name", edit_restaurant_path(@restaurant) %></p>
 
-<p><%= link_to "Delete Restaurant", restaurant_path(@restaurant), :confirm => 'Are you sure?', :method => :delete %></p>
 
 
 
@@ -22,6 +20,20 @@
 
 <h3><%= @restaurant.reviews.empty? ? "You need to create a review" : "Look at all those lovely reviews!!" %></h3>
 
-<p> <%= link_to "Create your own review", new_restaurant_review_path(@restaurant) %></p>
+<p><%= link_to "Edit Name", edit_restaurant_path(@restaurant) %></p>
+
+<p><%= link_to "Delete Restaurant", restaurant_path(@restaurant), :confirm => 'Are you sure?', :method => :delete %></p>
+
+<p> Create your own review:
+
+  <%= form_for @review, :url => restaurant_reviews_path(@restaurant) do |f| %>
+  <%= f.label "Go for it" %>:
+  <%= f.text_field :text %><br />
+
+
+  <%= f.submit %>
+<% end %>
+
+</p>
 
 <p> <%= link_to "Home", root_path %> </p>
